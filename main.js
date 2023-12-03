@@ -1,4 +1,4 @@
-import { getLista, limpaLista} from "./lista.js"
+import { getLista, limpaLista, adicionaNaLista} from "./lista.js"
 
 const olItens = document.querySelector('#itens');
 const pEntrada = document.querySelector('#entrada');
@@ -23,3 +23,14 @@ function limparItensDeLista(){
     limpaLista();
     atualizarLista();
 }
+
+btnAdicionar.addEventListener('click', criaElementoNaLista)
+
+function criaElementoNaLista(){
+    const texto = pEntrada.textContent
+    adicionaNaLista(texto)
+    atualizarLista()
+    pEntrada.textContent=""
+    pEntrada.focus()
+}
+
